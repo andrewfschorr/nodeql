@@ -6,6 +6,47 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!-- <p>Welcome to <%= title %></p> -->
+    <form action="/add" method="post">
+      foo:<br>
+      <input type="text" name="foo" value="">
+      <br>
+      bar:<br>
+      <input type="text" name="bar" value="">
+      <br>
+      age:<br>
+      <input type="number" name="age">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>foo</th>
+        <th>bar</th>
+        <th>age</th>
+        <th>complete?</th>
+      </tr>
+      <% widgets.forEach(function(widget){ %>
+        <tr>
+            <td>
+              <%- widget.ID %>
+            </td>
+            <td>
+              <%- widget.foo %>
+            </td>
+            <td>
+              <%- widget.bar %>
+            </td>
+            <td>
+              <%- widget.age %>
+            </td>
+            <td>
+              <%- widget.complete %>
+            </td>
+        </tr>
+      <% }); %>
+    </table>
   </body>
 </html>
