@@ -28,7 +28,21 @@ connection.query('SELECT * FROM widgets', function (error, results, fields) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', {
+    title: 'hello world'
+  });
 });
 
 module.exports = router;
+
+// CREATE TABLE widgets (
+//   ID int NOT NULL AUTO_INCREMENT,
+//   foo varchar(255) NOT NULL,
+//   bar varchar(255),
+//   age int,
+//   complete BOOL DEFAULT 0,
+//   PRIMARY KEY (ID)
+// );
+
+// INSERT INTO `widgets` (`foo`, `bar`, `age`)
+// VALUES ('schorr', null, '99');
