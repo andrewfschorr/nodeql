@@ -1,14 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../db');
+const express = require('express');
+const router = express.Router();
+const db = require('../db');
+const _ = require('lodash');
 
 router.get('/', function(req, res, next) {
   db.query('SELECT * FROM widgets', function (error, results, fields) {
     if (error) throw error;
-    // console.log(results);
     res.render('index', {
       title: 'hello world',
-      widgets: results
+      data: {
+        widgets: results,
+      }
     });
   });
 });

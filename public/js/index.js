@@ -7,6 +7,7 @@ APP.main = (function(namespace, global) {
         this.widgets = widgetEls.map((widget) => {
             return makeWidget(widget);
         });
+        console.log(this.widgets);
     }
 
     function makeWidget(widget) {

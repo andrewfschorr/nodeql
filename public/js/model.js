@@ -7,7 +7,6 @@ class WidgetModel {
                 this.id = parseInt(classList[1], 10);
             }
         });
-        console.log(this.id);
         this.el.querySelector('.delete').addEventListener('click', this.deleteWidget.bind(this));
         this.el.querySelector('.mark-complete').addEventListener('click', this.markComplete.bind(this));
     }
@@ -18,6 +17,9 @@ class WidgetModel {
 
     markComplete() {
         console.log(this);
+        fetch('/', {
+
+        })
     }
 
     getId() {

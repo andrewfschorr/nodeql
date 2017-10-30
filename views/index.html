@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+    </script>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <div class="data" data-json="">
+    </div>
     <h1><%= title %></h1>
     <!-- <p>Welcome to <%= title %></p> -->
     <form action="/add" method="post">
@@ -30,7 +34,7 @@
         <th>complete</th>
         <th>delete</th>
       </tr>
-      <% widgets.forEach(function(widget){ %>
+      <% data.widgets.forEach(function(widget){ %>
         <tr class="widget id-<%- widget.ID %>">
             <td>
               <%- widget.ID %>
