@@ -27,9 +27,11 @@
         <th>bar</th>
         <th>age</th>
         <th>complete?</th>
+        <th>complete</th>
+        <th>delete</th>
       </tr>
       <% widgets.forEach(function(widget){ %>
-        <tr>
+        <tr class="">
             <td>
               <%- widget.ID %>
             </td>
@@ -43,10 +45,17 @@
               <%- widget.age %>
             </td>
             <td>
-              <%- widget.complete %>
+              <%- (widget.complete) ? 'yes' : 'no' %>
+            </td>
+            <td>
+              <button class="mark-complete">Mark <%- (widget.complete) ? 'incomplete' : 'complete' %></button>
+            </td>
+            <td>
+              <button class="delete">delete</button>
             </td>
         </tr>
       <% }); %>
     </table>
+    <script src="/js/index.js"></script>
   </body>
 </html>
