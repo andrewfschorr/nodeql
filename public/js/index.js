@@ -1,9 +1,18 @@
+import WidgetModel from './model.js';
+
 window.APP = window.APP || {}
 APP.main = (function(namespace, global) {
     function _init() {
-        this.dedocument.querySelectorAll('.delete'));
-
+        const widgetEls = [...document.querySelectorAll('.widget')];
+        this.widgets = widgetEls.map((widget) => {
+            return makeWidget(widget);
+        });
     }
+
+    function makeWidget(widget) {
+        return new WidgetModel(widget);
+    }
+
     return {
         init: _init
     }
